@@ -1,0 +1,27 @@
+body {
+	background: rgb(225,225,225);
+}
+
+header#header {
+	background: #333;
+	color: #fff;
+}
+
+.col-md-6:last-child {
+	position: relative;
+	top: .35em;
+}
+
+@media (max-width: 768px) {
+	.col-md-6:last-child {
+		position: static;
+	}
+
+	.h3 {
+		padding-top: .25em;
+	}
+
+	.text-right, .text-left {
+		text-align: center!important;
+	}
+}
