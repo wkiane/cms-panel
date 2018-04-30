@@ -12,6 +12,13 @@ header#header {
 	top: .35em;
 }
 
+/*---------------------------------------------------*/
+
+.btn {
+	border: 0;
+	text-align: left;
+}
+
 @media (max-width: 768px) {
 	.col-md-6:last-child {
 		position: static;
