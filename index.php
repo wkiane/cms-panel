@@ -1,5 +1,5 @@
 <?php 
-	$pdo = new PDO('mysql:host=localhost;dbname=projeto_bootstrap', 'root', '80519923',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+	$pdo = new PDO('mysql:host=localhost;dbname=projeto_bootstrap', 'root', '',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 	$sobre = $pdo->prepare("SELECT * FROM `tb_sobre`");
 	$sobre->execute();
 	$sobre = $sobre->fetch()['sobre'];
@@ -158,7 +158,7 @@
 									    	<th scope="row"><?php echo $value['id'];?></th>
 									   		<td><?php echo $value['nome'];?></td>
 									   		<td><?php echo $value['profissao']?></td>
-											<td><button class="btn btn-sm btn-danger" type="button"><i class="fas fa-trash-alt"></i> Excluir</button></td>
+											<td><button class="btn btn-sm btn-danger deletar-membro" id_membro="<?php echo $value['id']; ?>" type="button"><i class="fas fa-trash-alt"></i> Excluir</button></td>
 									    </tr>
 									    <?php 	
 									    }

@@ -1,5 +1,6 @@
 $(function() {
 	clickMenu();
+	deleteMembros();
 
 	function clickMenu() {
 		scroll();
@@ -33,7 +34,26 @@ $(function() {
                 $('.navbar-toggler-icon').click();
             }, 200);
        	});
-	}
+	};
+
+
+
+	function deleteMembros() {
+			$('.deletar-membro').click(function () {
+				var id_membro = $(this).attr('id_membro');
+				var tr = $(this).parent().parent();
+
+				$.ajax({
+					method: 'POST',
+					data:{'id_membro': id_membro},
+					url: 'delete.php'
+				}).done(function() {
+					tr.fadeOut(function() {
+						tr.remove();
+					});
+				})
+		});
+	};
 
 
 });
